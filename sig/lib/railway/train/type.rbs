@@ -1,0 +1,9 @@
+# Описание 1
+module Railway
+  module Train
+    module Type
+      CARGO: ::Symbol
+      PASSENGER: ::Symbol
+    end
+  end
+end

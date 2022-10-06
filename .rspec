@@ -1,0 +1,5 @@
+--color
+--require spec_helper
+--format Fuubar
+--format html
+--out spec/reports/railway_spec.html
