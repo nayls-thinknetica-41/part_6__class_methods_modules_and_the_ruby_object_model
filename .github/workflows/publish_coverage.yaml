@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  publish coverage:
+  publish_coverage:
     runs-on: ubuntu-latest
 
     steps:

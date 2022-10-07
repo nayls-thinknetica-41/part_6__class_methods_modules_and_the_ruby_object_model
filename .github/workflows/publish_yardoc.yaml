@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  publish yardoc:
+  publish_yardoc:
     runs-on: ubuntu-latest
 
     steps:
