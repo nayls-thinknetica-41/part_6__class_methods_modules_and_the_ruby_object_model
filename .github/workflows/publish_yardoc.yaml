@@ -1,16 +1,23 @@
 name: Publish yardoc
 
 on:
-  push:
-    branches: [ master ]
+  workflow_run:
+    workflows: [Ruby]
+    types:
+      - completed
 
 jobs:
-  publish:
+  publish yardoc:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Download a yardoc
+        uses: actions/download-artifact@v3
+        with:
+          name: public-yardoc
 
       - name: Deploy to GitHub Pages
         if: success()

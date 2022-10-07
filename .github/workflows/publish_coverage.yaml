@@ -1,16 +1,23 @@
 name: Publish coverage
 
 on:
-  push:
-    branches: [ master ]
+  workflow_run:
+    workflows: [Ruby]
+    types:
+      - completed
 
 jobs:
-  publish:
+  publish coverage:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Download a coverage results
+        uses: actions/download-artifact@v3
+        with:
+          name: public-coverage-results
 
       - name: Deploy to GitHub Pages
         if: success()

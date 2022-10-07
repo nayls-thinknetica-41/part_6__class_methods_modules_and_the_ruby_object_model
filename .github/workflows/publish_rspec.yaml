@@ -1,16 +1,23 @@
 name: Publish rspec
 
 on:
-  push:
-    branches: [ master ]
+  workflow_run:
+    workflows: [Ruby]
+    types:
+      - completed
 
 jobs:
-  publish:
+  publish rspec:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Download a rspec results
+        uses: actions/download-artifact@v3
+        with:
+          name: public-rspec-results
 
       - name: Deploy to GitHub Pages
         if: success()
