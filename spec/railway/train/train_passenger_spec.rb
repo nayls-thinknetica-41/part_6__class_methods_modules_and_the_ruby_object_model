@@ -2,21 +2,21 @@
 
 require 'rspec'
 
-describe 'Railway::Train::CargoTrain' do
-  let(:train_default) { Railway::Train::CargoTrain.new('101') }
-  let(:train_full) { Railway::Train::CargoTrain.new('102', %w[wg1 wg2], %w[st1 st2 st3]) }
+describe Railway::Train::TrainPassenger do
+  let(:train_default) { Railway::Train::TrainPassenger.new('101') }
+  let(:train_full) { Railway::Train::TrainPassenger.new('102', %w[wg1 wg2], %w[st1 st2 st3]) }
 
   context 'по умолчанию' do
-    specify 'тип объекта Railway::Train::CargoTrain' do
-      expect(Railway::Train::CargoTrain.new('100')).to be_an_instance_of(Railway::Train::CargoTrain)
+    specify 'тип объекта Railway::Train::PassengerTrain' do
+      expect(Railway::Train::TrainPassenger.new('100')).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
 
     specify 'нельзя создать поезд без номера' do
-      expect { Railway::Train::CargoTrain.new }.to raise_error(ArgumentError)
+      expect { Railway::Train::TrainPassenger.new }.to raise_error(ArgumentError)
     end
 
     specify 'только @number обязательный' do
-      expect(Railway::Train::CargoTrain.new('100')).to be_an_instance_of(Railway::Train::CargoTrain)
+      expect(Railway::Train::TrainPassenger.new('100')).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
 
     specify 'список вагонов пуст' do
@@ -27,8 +27,8 @@ describe 'Railway::Train::CargoTrain' do
       expect(train_default.route).to eq([])
     end
 
-    specify 'тип поезда - :cargo' do
-      expect(train_default.type).to eq(Railway::Train::Type::CARGO)
+    specify 'тип поезда - :passenger' do
+      expect(train_default.type).to eq(Railway::Train::Type::PASSENGER)
     end
   end
 

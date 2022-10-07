@@ -1,9 +1,5 @@
-# Описание 2
 module Railway
   module Train
-    #
-    # Какое-то описание
-    # TrainAbstract
     class TrainAbstract
       attr_reader type: ::Symbol
 

@@ -1,0 +1,6 @@
+load_plugins: true
+ignored_plugins:
+  - yard-broken
+  - broken2
+autoload_plugins:
+  - yard-rspec

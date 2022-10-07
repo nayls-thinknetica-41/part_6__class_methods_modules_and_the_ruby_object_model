@@ -1,5 +1,5 @@
 module Railway
-  module Train
+  module Wagon
     module Type
       CARGO: ::Symbol
 

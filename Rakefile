@@ -5,21 +5,21 @@ require 'rspec/core/rake_task'
 task default: %w[spec yard]
 
 begin
-  require 'yard'
+  require 'rspec/core/rake_task'
 
-  YARD::Rake::YardocTask.new do |t|
-    t.files   = ['lib/**/*.rb']          # optional
-    t.options = %w[--any --extra --opts] # optional
-    t.stats_options = ['--list-undoc']   # optional
-  end
+  RSpec::Core::RakeTask.new(:spec)
 rescue LoadError
   nil
 end
 
 begin
-  require 'rspec/core/rake_task'
+  require 'yard'
 
-  RSpec::Core::RakeTask.new(:spec)
+  YARD::Rake::YardocTask.new(:yard) do |t|
+    t.files         = %w[lib/**/*.rb spec/**/*_spec.rb] # optional
+    t.options       = %w[--any --extra --opts]          # optional
+    t.stats_options = %w[--list-undoc]                  # optional
+  end
 rescue LoadError
   nil
 end

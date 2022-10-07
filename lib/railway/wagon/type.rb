@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Railway
-  module Train
+  module Wagon
     module Type
       CARGO = :cargo
       PASSENGER = :passenger

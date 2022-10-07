@@ -98,6 +98,8 @@ GEM
     webrick (1.7.0)
     yard (0.9.28)
       webrick (~> 1.7.0)
+    yard-rspec (0.1)
+      yard
 
 PLATFORMS
   arm64-darwin-21
@@ -114,6 +116,7 @@ DEPENDENCIES
   rubocop-rspec (~> 2.12)
   simplecov (= 0.21.2)
   yard (~> 0.9.28)
+  yard-rspec (~> 0.1)
 
 RUBY VERSION
    ruby 3.1.2p20

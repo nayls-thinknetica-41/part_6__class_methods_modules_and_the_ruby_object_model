@@ -2,5 +2,5 @@
 
 require_relative 'train/type'
 require_relative 'train/train_abstract'
-require_relative 'train/cargo_train'
-require_relative 'train/passenger_train'
+require_relative 'train/train_cargo'
+require_relative 'train/train_passenger'
