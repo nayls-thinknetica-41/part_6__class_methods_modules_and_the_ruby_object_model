@@ -23,7 +23,6 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
 
-
       - name: Install dependencies
         run: bundle install --local
 
@@ -32,7 +31,6 @@ jobs:
 
       - name: Run yard
         run: bundle exec rake yard
-
 
       - name: Archive rspec results
         uses: actions/upload-artifact@v3
@@ -46,8 +44,8 @@ jobs:
           name: public-coverage-results
           path: coverage
 
-      - name: Archive yardoc
+      - name: Archive yardoc results
         uses: actions/upload-artifact@v3
         with:
-          name: public-yardoc
+          name: public-yardoc-results
           path: doc

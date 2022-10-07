@@ -14,16 +14,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download a yardoc
+      - name: Download a yardoc results
         uses: actions/download-artifact@v3
         with:
-          name: public-yardoc
+          name: public-yardoc-results
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: yardoc-gh-pages
-          build_dir: doc
+          build_dir: public-yardoc-results
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
