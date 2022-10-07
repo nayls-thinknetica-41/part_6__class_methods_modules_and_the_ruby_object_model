@@ -1,10 +1,6 @@
 name: Publish rspec
 
-on:
-  workflow_run:
-    workflows: [Ruby]
-    types:
-      - completed
+on: workflow_call
 
 jobs:
   publish_rspec:
@@ -18,12 +14,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: public-rspec-results
+          path: public
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: rspec-gh-pages
-          build_dir: public-rspec-results
+          build_dir: public
+          jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

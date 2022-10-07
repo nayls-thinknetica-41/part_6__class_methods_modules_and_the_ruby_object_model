@@ -1,10 +1,6 @@
 name: Publish yardoc
 
-on:
-  workflow_run:
-    workflows: [Ruby]
-    types:
-      - completed
+on: workflow_call
 
 jobs:
   publish_yardoc:
@@ -18,12 +14,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: public-yardoc-results
+          path: public
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: yardoc-gh-pages
-          build_dir: public-yardoc-results
+          target_branch: gh-pages
+          build_dir: public
+          jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
