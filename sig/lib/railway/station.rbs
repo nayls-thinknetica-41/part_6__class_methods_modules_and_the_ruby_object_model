@@ -1,0 +1,8 @@
+module Railway
+  class Station
+    attr_reader trains: Array[String]
+    attr_accessor name: String
+
+    def initialize: (String name) -> void
+  end
+end

@@ -6,7 +6,7 @@ describe Railway::Train::TrainPassenger do
   let(:train_default) { Railway::Train::TrainPassenger.new('101') }
   let(:train_full) { Railway::Train::TrainPassenger.new('102', %w[wg1 wg2], %w[st1 st2 st3]) }
 
-  context 'по умолчанию' do
+  context '#initialize' do
     specify 'тип объекта Railway::Train::PassengerTrain' do
       expect(Railway::Train::TrainPassenger.new('100')).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
@@ -15,7 +15,7 @@ describe Railway::Train::TrainPassenger do
       expect { Railway::Train::TrainPassenger.new }.to raise_error(ArgumentError)
     end
 
-    specify 'только @number обязательный' do
+    specify 'только @param number обязательный' do
       expect(Railway::Train::TrainPassenger.new('100')).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
 
@@ -30,17 +30,40 @@ describe Railway::Train::TrainPassenger do
     specify 'тип поезда - :passenger' do
       expect(train_default.type).to eq(Railway::Train::Type::PASSENGER)
     end
-  end
 
-  example 'можно указать @number' do
-    expect(train_full.number).to eq('102')
-  end
+    context '@param number' do
+      specify 'можно указать' do
+        expect(train_full.number).to eq('102')
+      end
 
-  example 'можно указать @wagons' do
-    expect(train_full.wagons).to eq(%w[wg1 wg2])
-  end
+      specify 'тип String' do
+        expect(train_full.number).to be_an_instance_of(String)
+      end
+    end
 
-  example 'можно указать @route' do
-    expect(train_full.route).to eq(%w[st1 st2 st3])
+    context '@param wagons' do
+      specify 'можно указать' do
+        expect(train_full.wagons).to eq(%w[wg1 wg2])
+      end
+
+      specify 'можно изменить' do
+        train_full.wagons = ['wg1']
+        expect(train_full.wagons).to eq(%w[wg1])
+      end
+
+      specify 'тип Array' do
+        expect(train_full.wagons).to be_an_instance_of(Array)
+      end
+    end
+
+    context '@param route' do
+      specify 'можно указать' do
+        expect(train_full.route).to eq(%w[st1 st2 st3])
+      end
+
+      specify 'тип Array' do
+        expect(train_full.route).to be_an_instance_of(Array)
+      end
+    end
   end
 end

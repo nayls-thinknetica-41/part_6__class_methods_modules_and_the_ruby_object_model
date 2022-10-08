@@ -60,3 +60,6 @@ build-iPhoneSimulator/
 .idea
 .vscode
 .DS_Store
+
+## Results (simplecov, rspec, yardoc)
+/results

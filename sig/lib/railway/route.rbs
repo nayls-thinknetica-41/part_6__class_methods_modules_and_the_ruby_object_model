@@ -1,0 +1,7 @@
+module Railway
+  class Route
+    attr_reader routes: Array[Railway::Station]
+
+    def initialize: (Railway::Station start_station, Railway::Station end_station) -> void
+  end
+end
