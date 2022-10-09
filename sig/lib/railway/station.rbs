@@ -4,5 +4,12 @@ module Railway
     attr_accessor name: String
 
     def initialize: (String name) -> void
+
+    def arrivale: (Railway::Train::TrainAbstract train) -> Station
+    def departure: (Railway::Train::TrainAbstract train) -> Station
+
+    private
+
+    def train?: (Railway::Train::TrainAbstract train) -> bool
   end
 end
