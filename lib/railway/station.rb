@@ -2,7 +2,7 @@
 
 module Railway
   ##
-  # @attr_reader trains [Array[String]]
+  # @attr_reader trains [Array[Railway::Train::TrainAbstract]]
   # @attr_accessor name [String]
   class Station
     attr_reader :trains
