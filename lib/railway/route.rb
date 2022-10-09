@@ -18,5 +18,9 @@ module Railway
 
       @routes = [start_station, end_station]
     end
+
+    def routes
+      @routes.dup
+    end
   end
 end

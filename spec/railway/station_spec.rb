@@ -126,4 +126,14 @@ describe Railway::Station do
       end
     end
   end
+
+  context '@trains' do
+    it 'возвращает список поездов на станции' do
+      expect(station_full.trains).to eq([train_cargo1, train_passenger1])
+    end
+  end
+
+  context '@trains=' do
+
+  end
 end

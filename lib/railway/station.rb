@@ -5,7 +5,6 @@ module Railway
   # @attr_reader trains [::Array[::Railway::Train::TrainAbstract]]
   # @attr_accessor name [String]
   class Station
-    attr_reader :trains
     attr_accessor :name
 
     ##
@@ -17,6 +16,10 @@ module Railway
 
       @name = name
       @trains = []
+    end
+
+    def trains
+      @trains.dup
     end
 
     ##
