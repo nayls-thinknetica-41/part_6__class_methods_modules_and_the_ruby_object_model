@@ -43,7 +43,7 @@ describe Railway::Station do
         end.to raise_error(TypeError)
       end
 
-      specify 'Hash' do
+      specify 'Array' do
         expect do
           station_default.arrivale(['train'])
         end.to raise_error(TypeError)
@@ -95,7 +95,7 @@ describe Railway::Station do
         end.to raise_error(TypeError)
       end
 
-      specify 'Hash' do
+      specify 'Array' do
         expect do
           station_default.arrivale(['train'])
         end.to raise_error(TypeError)
