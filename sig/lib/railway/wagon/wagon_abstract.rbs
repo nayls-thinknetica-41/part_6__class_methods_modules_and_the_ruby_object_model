@@ -1,7 +1,7 @@
 module Railway
   module Wagon
     class WagonAbstract
-      attr_reader type: Symbol
+      attr_reader type: ::Symbol
 
       def initialize: () -> void
     end

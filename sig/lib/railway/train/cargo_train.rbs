@@ -1,7 +1,7 @@
 module Railway
   module Train
     class CargoTrain < TrainAbstract
-      def initialize: (::String number, ?::Array[String] wagons, ?::Array[String] route) -> void
+      def initialize: (::String number, ?::Array[::Railway::Wagon::WagonAbstract] wagons) -> void
     end
   end
 end

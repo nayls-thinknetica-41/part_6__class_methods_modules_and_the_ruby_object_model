@@ -2,7 +2,6 @@ module Railway
   module Wagon
     module Type
       CARGO: ::Symbol
-
       PASSENGER: ::Symbol
     end
   end

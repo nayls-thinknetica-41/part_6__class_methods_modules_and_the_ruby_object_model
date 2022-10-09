@@ -6,14 +6,13 @@ module Railway
     # TrainPasssenger
     class TrainPassenger < TrainAbstract
       ##
-      # @param number [String]
-      # @param wagons [Array[String]]
-      # @param route  [Array[String]]
+      # @param number [::String]
+      # @param wagons [::Array[::String]]
       # @return [TrainPassenger]
-      def initialize(number, wagons = [], route = [])
+      def initialize(number, wagons = [])
         super
 
-        @type = Railway::Train::Type::PASSENGER
+        @type = ::Railway::Train::Type::PASSENGER
       end
     end
   end

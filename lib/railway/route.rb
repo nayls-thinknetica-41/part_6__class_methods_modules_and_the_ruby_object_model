@@ -9,6 +9,8 @@ module Railway
     ##
     # @param start_station [Railway::Station]
     # @param end_station   [Railway::Station]
+    # @raise [ArgumentError] If start_station.nil?
+    # @raise [ArgumentError] If end_station.nil?
     # @return [Route]
     def initialize(start_station, end_station)
       raise ArgumentError if start_station.nil?

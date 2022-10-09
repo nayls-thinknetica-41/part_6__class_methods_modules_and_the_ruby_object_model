@@ -4,7 +4,7 @@ require 'rspec'
 
 describe Railway::Train::TrainPassenger do
   let(:train_default) { Railway::Train::TrainPassenger.new('101') }
-  let(:train_full) { Railway::Train::TrainPassenger.new('102', %w[wg1 wg2], %w[st1 st2 st3]) }
+  let(:train_full) { Railway::Train::TrainPassenger.new('102', %w[wg1 wg2]) }
 
   context '#initialize' do
     specify 'тип объекта Railway::Train::PassengerTrain' do
@@ -24,7 +24,7 @@ describe Railway::Train::TrainPassenger do
     end
 
     specify 'список маршрутов пуст' do
-      expect(train_default.route).to eq([])
+      expect(train_default.route).to eq(nil)
     end
 
     specify 'тип поезда - :passenger' do
@@ -53,16 +53,6 @@ describe Railway::Train::TrainPassenger do
 
       specify 'тип Array' do
         expect(train_full.wagons).to be_an_instance_of(Array)
-      end
-    end
-
-    context '@param route' do
-      specify 'можно указать' do
-        expect(train_full.route).to eq(%w[st1 st2 st3])
-      end
-
-      specify 'тип Array' do
-        expect(train_full.route).to be_an_instance_of(Array)
       end
     end
   end

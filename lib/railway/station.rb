@@ -10,6 +10,7 @@ module Railway
 
     ##
     # @param name [String]
+    # @raise [ArgumentError] if name is nil or empty
     # @return [Station]
     def initialize(name)
       raise ArgumentError if name.nil? || name.empty?
@@ -20,6 +21,7 @@ module Railway
 
     ##
     # @param train [Railway::Train::TrainAbstract]
+    # @raise [TypeError] if train is not TrainAbstract
     # @return [Station]
     def arrivale(train)
       raise TypeError unless train?(train)
@@ -31,6 +33,7 @@ module Railway
 
     ##
     # @param train [Railway::Train::TrainAbstract]
+    # @raise [TypeError] if train is not TrainAbstract
     # @return [Station]
     def departure(train)
       raise TypeError unless train?(train)

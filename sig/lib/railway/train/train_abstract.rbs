@@ -2,16 +2,12 @@ module Railway
   module Train
     class TrainAbstract
       attr_reader type: ::Symbol
-
       attr_accessor number: ::String
-
       attr_accessor speed: ::Float
+      attr_accessor wagons: ::Array[::Railway::Wagon::WagonAbstract]
+      attr_accessor route: ::Railway::Route
 
-      attr_accessor wagons: ::Array[::String]
-
-      attr_accessor route: ::Array[::String]
-
-      def initialize: (::String _number, ::Array[::String] _wagons, ::Array[::String] _route) -> void
+      def initialize: (::String _number, ::Array[::Railway::Wagon::WagonAbstract] _wagons) -> void
     end
   end
 end
