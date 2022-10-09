@@ -23,6 +23,23 @@ module Railway
     end
 
     ##
+    # @param train_type [::Symbol]
+    # @return [::Hash[::Symbol, Array[::Railway::Train::TrainAbstract]]]
+    def trains_on_type(train_type)
+      trains_list_on_type = {}
+
+      trains.each do |train|
+        next unless train.type.equal?(train_type)
+
+        trains_list_on_type.merge!(train.type => []) unless trains_list_on_type.key?(train.type)
+
+        trains_list_on_type[train.type].push(train)
+      end
+
+      trains_list_on_type
+    end
+
+    ##
     # @param train [::Railway::Train::TrainAbstract]
     # @raise [TypeError] if train is not TrainAbstract
     # @return [::Railway::Station]

@@ -23,6 +23,12 @@ describe Railway::Station do
     end
   end
 
+  context '@trains' do
+    it 'возвращает список поездов на станции' do
+      expect(station_full.trains).to eq([train_cargo1, train_passenger1])
+    end
+  end
+
   context '#arrivale' do
     it 'грузовой поезд прибывает на станцию' do
       station_default.arrivale(train_cargo1)
@@ -127,13 +133,33 @@ describe Railway::Station do
     end
   end
 
-  context '@trains' do
-    it 'возвращает список поездов на станции' do
-      expect(station_full.trains).to eq([train_cargo1, train_passenger1])
+  context '#trains_on_type' do
+    context 'возвращает список поездов на станции по типу' do
+      it ':cargo' do
+        expect(
+          station_full.trains_on_type(::Railway::Train::Type::CARGO)
+        ).to eq({ ::Railway::Train::Type::CARGO => [train_cargo1] })
+      end
+
+      it ':passenger' do
+        expect(
+          station_full.trains_on_type(::Railway::Train::Type::PASSENGER)
+        ).to eq({ ::Railway::Train::Type::PASSENGER => [train_passenger1] })
+      end
     end
-  end
 
-  context '@trains=' do
+    context 'возвращает количество поездов по типу' do
+      it ':cargo' do
+        expect(
+          station_full.trains_on_type(::Railway::Train::Type::CARGO).size
+        ).to eq(1)
+      end
 
+      it ':passenger' do
+        expect(
+          station_full.trains_on_type(::Railway::Train::Type::PASSENGER).size
+        ).to eq(1)
+      end
+    end
   end
 end
