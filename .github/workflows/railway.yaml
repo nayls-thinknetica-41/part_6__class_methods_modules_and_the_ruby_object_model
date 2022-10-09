@@ -12,17 +12,7 @@ jobs:
     name: Test
     uses: ./.github/workflows/test.yaml
 
-#  publish_rspec:
-#    name: Publish rspec
-#    needs: test
-#    uses: ./.github/workflows/publish_rspec.yaml
-
-#  publish_coverage:
-#    name: Publish coverage
-#    needs: test
-#    uses: ./.github/workflows/publish_coverage.yaml
-
   publish_yardoc:
-    name: Publish yardoc
+    name: Publish pages
     needs: test
-    uses: ./.github/workflows/publish_yardoc.yaml
+    uses: ./.github/workflows/publish_pages.yaml

@@ -1,26 +1,26 @@
-name: Publish coverage
+name: Publish pages
 
 on: workflow_call
 
 jobs:
-  publish_coverage:
+  publish_yardoc:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download a coverage results
+      - name: Download a yardoc results
         uses: actions/download-artifact@v3
         with:
-          name: public-coverage-results
+          name: public-results
           path: public
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: coverage-gh-pages
+          target_branch: gh-pages
           build_dir: public
           jekyll: false
         env:

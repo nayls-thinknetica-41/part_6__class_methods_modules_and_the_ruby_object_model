@@ -27,20 +27,8 @@ jobs:
       - name: Run yard
         run: bundle exec rake yard
 
-      - name: Archive rspec results
+      - name: Archive results
         uses: actions/upload-artifact@v3
         with:
-          name: public-rspec-results
-          path: spec/reports
-
-      - name: Archive coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: public-coverage-results
-          path: coverage
-
-      - name: Archive yardoc results
-        uses: actions/upload-artifact@v3
-        with:
-          name: public-yardoc-results
-          path: doc
+          name: public-results
+          path: results
