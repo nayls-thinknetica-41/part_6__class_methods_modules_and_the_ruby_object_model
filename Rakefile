@@ -16,9 +16,9 @@ begin
   require 'yard'
 
   YARD::Rake::YardocTask.new(:yard) do |t|
-    t.files         = %w[lib/**/*.rb spec/**/*_spec.rb] # optional
-    t.options       = %w[--any --extra --opts]          # optional
-    t.stats_options = %w[--list-undoc]                  # optional
+    t.files         = %w[lib/**/*.rb spec/**/*_spec.rb]                             # optional
+    t.options       = %w[--any --extra --opts --private --protected -o results/doc] # optional
+    t.stats_options = %w[--list-undoc]                                              # optional
   end
 rescue LoadError
   nil

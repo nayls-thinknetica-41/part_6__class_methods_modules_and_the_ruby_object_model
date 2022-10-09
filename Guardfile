@@ -24,7 +24,11 @@
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: 'bundle exec rspec' do
+guard 'yard', server: false do
+  watch(%r{^lib/.+\.rb$}) { system('bundle exec rake yard') }
+end
+
+guard 'rspec', cmd: 'bundle exec rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
@@ -52,7 +56,7 @@ guard :rspec, cmd: 'bundle exec rspec' do
   end
 end
 
-guard :bundler do
+guard 'bundler' do
   require 'guard/bundler'
   require 'guard/bundler/verify'
   helper = Guard::Bundler::Verify.new
