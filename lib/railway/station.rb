@@ -2,16 +2,16 @@
 
 module Railway
   ##
-  # @attr_reader trains [Array[Railway::Train::TrainAbstract]]
+  # @attr_reader trains [::Array[::Railway::Train::TrainAbstract]]
   # @attr_accessor name [String]
   class Station
     attr_reader :trains
     attr_accessor :name
 
     ##
-    # @param name [String]
+    # @param name [::String]
     # @raise [ArgumentError] if name is nil or empty
-    # @return [Station]
+    # @return [::Railway::Station]
     def initialize(name)
       raise ArgumentError if name.nil? || name.empty?
 
@@ -20,9 +20,9 @@ module Railway
     end
 
     ##
-    # @param train [Railway::Train::TrainAbstract]
+    # @param train [::Railway::Train::TrainAbstract]
     # @raise [TypeError] if train is not TrainAbstract
-    # @return [Station]
+    # @return [::Railway::Station]
     def arrivale(train)
       raise TypeError unless train?(train)
 
@@ -32,9 +32,9 @@ module Railway
     end
 
     ##
-    # @param train [Railway::Train::TrainAbstract]
+    # @param train [::Railway::Train::TrainAbstract]
     # @raise [TypeError] if train is not TrainAbstract
-    # @return [Station]
+    # @return [::Railway::Station]
     def departure(train)
       raise TypeError unless train?(train)
 
@@ -46,8 +46,8 @@ module Railway
     private
 
     ##
-    # @param train [Railway::Train::TrainAbstract]
-    # @return [Boolean]
+    # @param train [::Railway::Train::TrainAbstract]
+    # @return [::Boolean]
     def train?(train)
       train.is_a?(Railway::Train::TrainAbstract)
     end

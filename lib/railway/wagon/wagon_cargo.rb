@@ -4,13 +4,13 @@ module Railway
   module Wagon
     ##
     # WagonCargo
-    class WagonCargo < WagonAbstract
+    class WagonCargo < ::Railway::Wagon::WagonAbstract
       ##
       # @return [WagonCargo]
       def initialize
         super
 
-        @type = Railway::Wagon::Type::CARGO
+        @type = ::Railway::Wagon::Type::CARGO
       end
     end
   end

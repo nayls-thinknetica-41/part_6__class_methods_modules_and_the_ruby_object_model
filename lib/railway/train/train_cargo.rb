@@ -4,7 +4,7 @@ module Railway
   module Train
     ##
     # TrainCargo
-    class TrainCargo < TrainAbstract
+    class TrainCargo < ::Railway::Train::TrainAbstract
       ##
       # @param number [::String]
       # @param wagons [::Array[::String]]

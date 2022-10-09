@@ -2,16 +2,16 @@
 
 module Railway
   ##
-  # @attr_reader routes [Array[Railway::Station]]
+  # @attr_reader routes [::Array[::Railway::Station]]
   class Route
     attr_reader :routes
 
     ##
-    # @param start_station [Railway::Station]
-    # @param end_station   [Railway::Station]
+    # @param start_station [::Railway::Station]
+    # @param end_station   [::Railway::Station]
     # @raise [ArgumentError] If start_station.nil?
     # @raise [ArgumentError] If end_station.nil?
-    # @return [Route]
+    # @return [::Railway::Route]
     def initialize(start_station, end_station)
       raise ArgumentError if start_station.nil?
       raise ArgumentError if end_station.nil?

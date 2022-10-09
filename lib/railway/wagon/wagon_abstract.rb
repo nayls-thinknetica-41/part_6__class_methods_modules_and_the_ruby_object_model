@@ -4,7 +4,7 @@ module Railway
   module Wagon
     ##
     # @abstract
-    # @attr_reader type [Symbol]
+    # @attr_reader type [::Symbol]
     class WagonAbstract
       attr_reader :type
 
