@@ -2,10 +2,11 @@
 
 module Railway
   ##
+  # @attr name [::String]
   # @attr_reader trains [::Array[::Railway::Train::TrainAbstract]]
-  # @attr_accessor name [String]
   class Station
     attr_accessor :name
+    attr_reader :trains
 
     ##
     # @param name [::String]
@@ -66,10 +67,11 @@ module Railway
     private
 
     ##
+    # @private
     # @param train [::Railway::Train::TrainAbstract]
     # @return [::Boolean]
     def train?(train)
-      train.is_a?(Railway::Train::TrainAbstract)
+      train.is_a?(::Railway::Train::TrainAbstract)
     end
   end
 end
