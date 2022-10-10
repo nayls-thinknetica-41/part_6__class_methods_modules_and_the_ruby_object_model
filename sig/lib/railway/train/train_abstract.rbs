@@ -8,6 +8,15 @@ module Railway
       attr_accessor route: ::Railway::Route
 
       def initialize: (::String _number, ::Array[::Railway::Wagon::WagonAbstract] _wagons) -> void
+
+      def stop: () -> void
+      def attach_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
+      def unhook_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
+
+      private
+
+      def wagon?: (::Railway::Wagon::WagonAbstract wagon) -> bool
+      def wagon_type_suitable?: (::Railway::Wagon::WagonAbstract wagon) -> bool
     end
   end
 end

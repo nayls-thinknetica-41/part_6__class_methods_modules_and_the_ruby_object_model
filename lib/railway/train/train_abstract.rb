@@ -22,8 +22,57 @@ module Railway
       def initialize(number, wagons)
         raise "Cannot initialize an abstract #{self.class.name}" if instance_of?(TrainAbstract)
 
+        @type = nil
         @number = number
+        @speed = 0.0
         @wagons = wagons
+        @route = nil
+      end
+
+      ##
+      # @return void
+      def stop
+        @speed = 0.0
+      end
+
+      ##
+      # @param wagon [::Railway::Wagon::WagonAbstract]
+      def attach_wagon(wagon)
+        raise TypeError unless wagon?(wagon)
+        raise TypeError unless wagon_type_suitable?(wagon)
+
+        @wagons.push(wagon)
+
+        self
+      end
+
+      ##
+      # @param wagon [::Railway::Wagon::WagonAbstract]
+      def unhook_wagon(wagon)
+        raise TypeError unless wagon?(wagon)
+        raise TypeError unless wagon_type_suitable?(wagon)
+
+        @wagons.delete(wagon)
+
+        self
+      end
+
+      private
+
+      ##
+      # @private
+      # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @return bool
+      def wagon?(wagon)
+        wagon.is_a?(::Railway::Wagon::WagonAbstract)
+      end
+
+      ##
+      # @private
+      # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @return bool
+      def wagon_type_suitable?(wagon)
+        raise 'Not implement method'
       end
     end
   end
