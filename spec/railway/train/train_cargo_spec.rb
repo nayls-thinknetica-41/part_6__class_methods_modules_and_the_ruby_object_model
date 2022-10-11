@@ -127,5 +127,47 @@ describe ::Railway::Train::TrainCargo do
         train_default.attach_wagon(wagon_passenger1)
       end.to raise_error(TypeError)
     end
+
+    specify 'нельзя прицепить вагон в движении' do
+      train_default.speed = 15.5
+      train_default.attach_wagon(wagon_cargo1)
+
+      expect(train_default.wagons).to eq([])
+    end
+  end
+
+  context '#unhook_wagon' do
+    let(:train_with_one_wagons) { train_default.attach_wagon(wagon_cargo1) }
+    let(:train_with_two_wagons) { train_default.attach_wagon(wagon_cargo1).attach_wagon(wagon_cargo2) }
+
+    specify 'отцепить вагон вагон' do
+      expect(
+        train_with_one_wagons
+          .unhook_wagon(wagon_cargo1)
+          .wagons
+      ).to eq([])
+    end
+
+    specify 'прицепить несколько вагонов сразу' do
+      expect(
+        train_with_two_wagons
+          .unhook_wagon(wagon_cargo1)
+          .unhook_wagon(wagon_cargo2)
+          .wagons
+      ).to eq([])
+    end
+
+    specify 'нельзя прицепить вагон не подходящего типа' do
+      expect do
+        train_with_one_wagons.unhook_wagon(wagon_passenger1)
+      end.to raise_error(TypeError)
+    end
+
+    specify 'нельзя прицепить вагон в движении' do
+      train_with_one_wagons.speed = 15.5
+      train_with_one_wagons.unhook_wagon(wagon_cargo1)
+
+      expect(train_with_one_wagons.wagons).to eq([wagon_cargo1])
+    end
   end
 end

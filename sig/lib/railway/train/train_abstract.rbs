@@ -10,6 +10,7 @@ module Railway
       def initialize: (::String _number, ::Array[::Railway::Wagon::WagonAbstract] _wagons) -> void
 
       def stop: () -> void
+      def stopped?: () -> void
       def attach_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
       def unhook_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
 

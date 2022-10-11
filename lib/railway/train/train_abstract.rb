@@ -36,10 +36,19 @@ module Railway
       end
 
       ##
+      # @return void
+      def stopped?
+        return false unless @speed.zero?
+
+        true
+      end
+
+      ##
       # @param wagon [::Railway::Wagon::WagonAbstract]
       def attach_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
+        return self unless stopped?
 
         @wagons.push(wagon)
 
@@ -51,6 +60,7 @@ module Railway
       def unhook_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
+        return self unless stopped?
 
         @wagons.delete(wagon)
 
