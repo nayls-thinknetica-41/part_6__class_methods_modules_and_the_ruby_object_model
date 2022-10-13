@@ -161,9 +161,9 @@ module Railway
 
       ##
       # @private
-      # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @param _wagon [::Railway::Wagon::WagonAbstract]
       # @return bool
-      def wagon_type_suitable?(wagon)
+      def wagon_type_suitable?(_wagon)
         raise 'Not implement method'
       end
     end

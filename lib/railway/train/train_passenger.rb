@@ -3,7 +3,6 @@
 module Railway
   module Train
     ##
-    # @abstract
     # @attr_reader type   [::Symbol]
     # @attr        number [::String]
     # @attr        speed  [::Float]
