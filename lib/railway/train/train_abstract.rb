@@ -9,6 +9,7 @@ module Railway
     # @attr        speed  [::Float]
     # @attr        wagons [::Array[::Railway::Wagon::WagonAbstract]]
     # @attr        route  [::Railway::Route]
+    # @attr        current_station [::Hash[::Symbol, ::Integer | ::Railway::Station]]
     class TrainAbstract
       attr_reader :type
       attr_accessor :number,
@@ -20,16 +21,15 @@ module Railway
       ##
       # @abstract
       # @param number [::String]
-      # @param wagons [::Array[::Railway::Wagon::WagonAbstract]]
       # @raise [RuntimeError] Cannot initialize an abstract Railway::Train::TrainAbstract
       # @return [TrainAbstract]
-      def initialize(number, wagons)
+      def initialize(number)
         raise "Cannot initialize an abstract #{self.class.name}" if instance_of?(TrainAbstract)
 
         @type = nil
         @number = number
         @speed = 0.0
-        @wagons = wagons
+        @wagons = []
         @route = nil
         @current_station = {}
       end
@@ -41,7 +41,7 @@ module Railway
       end
 
       ##
-      # @return void
+      # @return bool
       def stopped?
         return false unless @speed.zero?
 
@@ -50,6 +50,7 @@ module Railway
 
       ##
       # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @return [::Railway::Train::TrainAbstract]
       def attach_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
@@ -62,6 +63,7 @@ module Railway
 
       ##
       # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @return [::Railway::Train::TrainAbstract]
       def unhook_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
@@ -72,6 +74,9 @@ module Railway
         self
       end
 
+      ##
+      # @param route [::Railway::Route]
+      # @return [::Railway::Route]
       def route=(route)
         raise TypeError unless route.is_a?(::Railway::Route)
 
@@ -110,6 +115,38 @@ module Railway
           current_station:,
           next_station:
         }
+      end
+
+      ##
+      # @return [::Railway::Train::TrainAbstract]
+      def forward
+        next_station_index = @current_station[:index] + 1
+        next_station = @route.routes[next_station_index]
+
+        return self if next_station.nil?
+
+        @current_station = {
+          index: next_station_index,
+          station: next_station
+        }
+
+        self
+      end
+
+      ##
+      # @return [::Railway::Train::TrainAbstract]
+      def backward
+        previous_station_index = @current_station[:index] - 1
+        previous_station = @route.routes[previous_station_index]
+
+        return self if previous_station_index.negative?
+        return self if previous_station.nil?
+
+        @current_station = {
+          index: previous_station_index,
+          station: previous_station
+        }
+        self
       end
 
       private

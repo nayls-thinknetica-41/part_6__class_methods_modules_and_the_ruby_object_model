@@ -12,10 +12,9 @@ module Railway
     class TrainCargo < ::Railway::Train::TrainAbstract
       ##
       # @param number [::String]
-      # @param wagons [::Array[::Railway::Wagon::WagonAbstract]]
       # @raise [RuntimeError] Cannot initialize an abstract Railway::Train::TrainAbstract
       # @return [TrainAbstract]
-      def initialize(number, wagons = [])
+      def initialize(number)
         super
 
         @type = ::Railway::Train::Type::CARGO

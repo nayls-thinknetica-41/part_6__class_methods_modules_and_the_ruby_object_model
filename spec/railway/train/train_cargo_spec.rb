@@ -8,8 +8,20 @@ describe ::Railway::Train::TrainCargo do
   let(:wagon_passenger1) { ::Railway::Wagon::WagonPassenger.new }
   let(:wagon_passenger2) { ::Railway::Wagon::WagonPassenger.new }
 
+  let(:station_st1) { ::Railway::Station.new('st1') }
+  let(:station_st2) { ::Railway::Station.new('st2') }
+  let(:station_st3) { ::Railway::Station.new('st3') }
+
   let(:train_default) { ::Railway::Train::TrainCargo.new('101') }
-  let(:train_full) { ::Railway::Train::TrainCargo.new('102', %w[wg1 wg2]) }
+  let(:train_full) { ::Railway::Train::TrainCargo.new('102') }
+  let(:train_with_default_route) {
+    train_default.route = ::Railway::Route.new(station_st1, station_st2)
+    train_default
+  }
+  let(:train_with_full_route) {
+    train_default.route = ::Railway::Route.new(station_st1, station_st2).insert(station_st3)
+    train_default
+  }
 
   context '#initialize' do
     specify 'тип объекта ::Railway::Train::CargoTrain' do
@@ -50,21 +62,6 @@ describe ::Railway::Train::TrainCargo do
         expect(train_full.number).to be_an_instance_of(String)
       end
     end
-
-    context '@param wagons' do
-      example 'можно указать' do
-        expect(train_full.wagons).to eq(%w[wg1 wg2])
-      end
-
-      example 'можно изменить' do
-        train_full.wagons = ['wg1']
-        expect(train_full.wagons).to eq(%w[wg1])
-      end
-
-      specify 'тип Array' do
-        expect(train_full.wagons).to be_an_instance_of(Array)
-      end
-    end
   end
 
   context '#speed' do
@@ -100,7 +97,7 @@ describe ::Railway::Train::TrainCargo do
 
   context '#wagons' do
     specify 'может возвращать количество вагонов' do
-      expect(train_full.wagons).to eq(%w[wg1 wg2])
+      expect(train_full.wagons).to eq([])
     end
   end
 
@@ -172,19 +169,6 @@ describe ::Railway::Train::TrainCargo do
   end
 
   context '#route' do
-    let(:station_st1) { ::Railway::Station.new('st1') }
-    let(:station_st2) { ::Railway::Station.new('st2') }
-    let(:station_st3) { ::Railway::Station.new('st3') }
-
-    let(:train_with_default_route) {
-      train_default.route = ::Railway::Route.new(station_st1, station_st2)
-      train_default
-    }
-    let(:train_with_full_route) {
-      train_default.route = ::Railway::Route.new(station_st1, station_st2).insert(station_st3)
-      train_default
-    }
-
     specify 'может получить маршрут' do
       expect(train_with_default_route.route.routes).to eq([station_st1, station_st2])
     end
@@ -199,14 +183,6 @@ describe ::Railway::Train::TrainCargo do
   end
 
   context '#route_status' do
-    let(:station_st1) { ::Railway::Station.new('st1') }
-    let(:station_st2) { ::Railway::Station.new('st2') }
-
-    let(:train_with_default_route) {
-      train_default.route = ::Railway::Route.new(station_st1, station_st2)
-      train_default
-    }
-
     specify 'выводит предыдущую, текущую и следующую станцию' do
       expect(train_with_default_route.route_status)
         .to eq({
@@ -214,6 +190,67 @@ describe ::Railway::Train::TrainCargo do
                  current_station: station_st1,
                  next_station: station_st2
                })
+    end
+  end
+
+  context 'move train' do
+    context '#forward' do
+      specify 'поезд перемещается на следующую станцию по маршруту' do
+        expect(train_with_default_route.forward.current_station)
+          .to eq({
+                   index: 1,
+                   station: station_st2
+                 })
+      end
+
+      specify 'поезд никуда не перемещается если нет следующей станции' do
+        expect(train_with_default_route.forward.forward.forward.current_station)
+          .to eq({
+                   index: 1,
+                   station: station_st2
+                 })
+      end
+
+      specify 'изменяется статус поездки на новую станцию' do
+        expect(train_with_default_route.forward.route_status)
+          .to eq({
+                   previous_station: station_st1,
+                   current_station: station_st2,
+                   next_station: nil
+                 })
+      end
+    end
+
+    context '#backward' do
+      let(:train_with_end_default_route) {
+        train_default.route = ::Railway::Route.new(station_st1, station_st2)
+        train_default.forward.forward
+      }
+
+      specify 'поезд перемещается на предыдущую станцию по маршруту' do
+        expect(train_with_end_default_route.backward.current_station)
+          .to eq({
+                   index: 0,
+                   station: station_st1
+                 })
+      end
+
+      specify 'поезд никуда не перемещается если нет предыдущей станции' do
+        expect(train_with_end_default_route.backward.backward.backward.current_station)
+          .to eq({
+                   index: 0,
+                   station: station_st1
+                 })
+      end
+
+      specify 'изменяется статус поездки на новую станцию' do
+        expect(train_with_end_default_route.backward.route_status)
+          .to eq({
+                   previous_station: nil,
+                   current_station: station_st1,
+                   next_station: station_st2
+                 })
+      end
     end
   end
 end
