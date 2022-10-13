@@ -13,6 +13,7 @@ module Railway
       def stopped?: () -> void
       def attach_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
       def unhook_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
+      def route_status: () -> ::Hash[::Symbol, ::Railway::Station]
 
       private
 

@@ -11,7 +11,11 @@ module Railway
     # @attr        route  [::Railway::Route]
     class TrainAbstract
       attr_reader :type
-      attr_accessor :number, :speed, :wagons, :route
+      attr_accessor :number,
+                    :speed,
+                    :wagons,
+                    :route,
+                    :current_station
 
       ##
       # @abstract
@@ -27,6 +31,7 @@ module Railway
         @speed = 0.0
         @wagons = wagons
         @route = nil
+        @current_station = {}
       end
 
       ##
@@ -65,6 +70,46 @@ module Railway
         @wagons.delete(wagon)
 
         self
+      end
+
+      def route=(route)
+        raise TypeError unless route.is_a?(::Railway::Route)
+
+        @current_station = {
+          index: 0,
+          station: route.routes.first
+        }
+
+        @route = route
+      end
+
+      ##
+      # @return [::Hash[::Symbol, ::Railway::Station]]
+      def route_status
+        return if @route.nil? || @route.routes.empty?
+
+        current_station_index = @current_station[:index]
+
+        case current_station_index
+        when 0
+          previous_station = nil
+          current_station = @current_station[:station]
+          next_station = @route.routes[@current_station[:index] + 1]
+        when @route.routes.size - 1
+          previous_station = @route.routes[@current_station[:index] - 1]
+          current_station = @route.routes[@current_station[:index]]
+          next_station = nil
+        else
+          previous_station = @route.routes[@current_station[:index] - 1]
+          current_station = @route.routes[@current_station[:index]]
+          next_station = @route.routes[@current_station[:index] + 1]
+        end
+
+        {
+          previous_station:,
+          current_station:,
+          next_station:
+        }
       end
 
       private

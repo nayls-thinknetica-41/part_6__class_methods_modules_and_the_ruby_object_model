@@ -170,4 +170,50 @@ describe ::Railway::Train::TrainCargo do
       expect(train_with_one_wagons.wagons).to eq([wagon_cargo1])
     end
   end
+
+  context '#route' do
+    let(:station_st1) { ::Railway::Station.new('st1') }
+    let(:station_st2) { ::Railway::Station.new('st2') }
+    let(:station_st3) { ::Railway::Station.new('st3') }
+
+    let(:train_with_default_route) {
+      train_default.route = ::Railway::Route.new(station_st1, station_st2)
+      train_default
+    }
+    let(:train_with_full_route) {
+      train_default.route = ::Railway::Route.new(station_st1, station_st2).insert(station_st3)
+      train_default
+    }
+
+    specify 'может получить маршрут' do
+      expect(train_with_default_route.route.routes).to eq([station_st1, station_st2])
+    end
+
+    specify 'маршрут корректного типа' do
+      expect(train_with_default_route.route).to be_an_instance_of(::Railway::Route)
+    end
+
+    specify 'поезд при назначении маршрута перемещается на первую станцию' do
+      expect(train_with_default_route.current_station).to eq({ index: 0, station: station_st1 })
+    end
+  end
+
+  context '#route_status' do
+    let(:station_st1) { ::Railway::Station.new('st1') }
+    let(:station_st2) { ::Railway::Station.new('st2') }
+
+    let(:train_with_default_route) {
+      train_default.route = ::Railway::Route.new(station_st1, station_st2)
+      train_default
+    }
+
+    specify 'выводит предыдущую, текущую и следующую станцию' do
+      expect(train_with_default_route.route_status)
+        .to eq({
+                 previous_station: nil,
+                 current_station: station_st1,
+                 next_station: station_st2
+               })
+    end
+  end
 end
