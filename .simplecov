@@ -19,4 +19,6 @@ SimpleCov.start do
   end
 
   add_group 'Multiple Files', %w[app/models app/controllers] # You can also pass in an array
+
+  SimpleCov.coverage_dir('results/coverage')
 end
