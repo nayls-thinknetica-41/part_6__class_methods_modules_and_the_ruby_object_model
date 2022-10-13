@@ -111,9 +111,9 @@ module Railway
         end
 
         {
-          previous_station:,
-          current_station:,
-          next_station:
+          previous_station: previous_station,
+          current_station: current_station,
+          next_station: next_station
         }
       end
 
