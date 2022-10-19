@@ -2,38 +2,38 @@
 
 require 'rspec'
 
-describe ::Railway::Train::TrainPassenger do
-  let(:wagon_cargo1) { ::Railway::Wagon::WagonCargo.new }
-  let(:wagon_cargo2) { ::Railway::Wagon::WagonCargo.new }
-  let(:wagon_passenger1) { ::Railway::Wagon::WagonPassenger.new }
-  let(:wagon_passenger2) { ::Railway::Wagon::WagonPassenger.new }
+describe Railway::Train::TrainPassenger do
+  let(:wagon_cargo1) { Railway::Wagon::WagonCargo.new }
+  let(:wagon_cargo2) { Railway::Wagon::WagonCargo.new }
+  let(:wagon_passenger1) { Railway::Wagon::WagonPassenger.new }
+  let(:wagon_passenger2) { Railway::Wagon::WagonPassenger.new }
 
-  let(:station_st1) { ::Railway::Station.new('st1') }
-  let(:station_st2) { ::Railway::Station.new('st2') }
-  let(:station_st3) { ::Railway::Station.new('st3') }
+  let(:station_st1) { Railway::Station.new('st1') }
+  let(:station_st2) { Railway::Station.new('st2') }
+  let(:station_st3) { Railway::Station.new('st3') }
 
-  let(:train_default) { ::Railway::Train::TrainPassenger.new('101') }
-  let(:train_full) { ::Railway::Train::TrainPassenger.new('102') }
+  let(:train_default) { Railway::Train::TrainPassenger.new('101') }
+  let(:train_full) { Railway::Train::TrainPassenger.new('102') }
   let(:train_with_default_route) {
-    train_default.route = ::Railway::Route.new(station_st1, station_st2)
+    train_default.route = Railway::Route.new(station_st1, station_st2)
     train_default
   }
   let(:train_with_full_route) {
-    train_default.route = ::Railway::Route.new(station_st1, station_st2).insert(station_st3)
+    train_default.route = Railway::Route.new(station_st1, station_st2).insert(station_st3)
     train_default
   }
 
   context '#initialize' do
-    specify 'тип объекта ::Railway::Train::PassengerTrain' do
-      expect(train_default).to be_an_instance_of(::Railway::Train::TrainPassenger)
+    specify 'тип объекта Railway::Train::PassengerTrain' do
+      expect(train_default).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
 
     specify 'нельзя создать поезд без номера' do
-      expect { ::Railway::Train::TrainPassenger.new }.to raise_error(ArgumentError)
+      expect { Railway::Train::TrainPassenger.new }.to raise_error(ArgumentError)
     end
 
     specify 'только @param number обязательный' do
-      expect(train_default).to be_an_instance_of(::Railway::Train::TrainPassenger)
+      expect(train_default).to be_an_instance_of(Railway::Train::TrainPassenger)
     end
 
     specify 'список вагонов пуст' do
@@ -45,7 +45,7 @@ describe ::Railway::Train::TrainPassenger do
     end
 
     specify 'тип поезда - :passenger' do
-      expect(train_default.type).to eq(::Railway::Train::Type::PASSENGER)
+      expect(train_default.type).to eq(Railway::Train::Type::PASSENGER)
     end
 
     context '@param number' do
@@ -162,7 +162,7 @@ describe ::Railway::Train::TrainPassenger do
     end
 
     specify 'маршрут корректного типа' do
-      expect(train_with_full_route.route).to be_an_instance_of(::Railway::Route)
+      expect(train_with_full_route.route).to be_an_instance_of(Railway::Route)
     end
 
     specify 'поезд при назначении маршрута перемещается на первую станцию' do

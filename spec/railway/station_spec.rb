@@ -137,27 +137,27 @@ describe Railway::Station do
     context 'возвращает список поездов на станции по типу' do
       it ':cargo' do
         expect(
-          station_full.trains_on_type(::Railway::Train::Type::CARGO)
-        ).to eq({ ::Railway::Train::Type::CARGO => [train_cargo1] })
+          station_full.trains_on_type(Railway::Train::Type::CARGO)
+        ).to eq({ Railway::Train::Type::CARGO => [train_cargo1] })
       end
 
       it ':passenger' do
         expect(
-          station_full.trains_on_type(::Railway::Train::Type::PASSENGER)
-        ).to eq({ ::Railway::Train::Type::PASSENGER => [train_passenger1] })
+          station_full.trains_on_type(Railway::Train::Type::PASSENGER)
+        ).to eq({ Railway::Train::Type::PASSENGER => [train_passenger1] })
       end
     end
 
     context 'возвращает количество поездов по типу' do
       it ':cargo' do
         expect(
-          station_full.trains_on_type(::Railway::Train::Type::CARGO).size
+          station_full.trains_on_type(Railway::Train::Type::CARGO).size
         ).to eq(1)
       end
 
       it ':passenger' do
         expect(
-          station_full.trains_on_type(::Railway::Train::Type::PASSENGER).size
+          station_full.trains_on_type(Railway::Train::Type::PASSENGER).size
         ).to eq(1)
       end
     end
