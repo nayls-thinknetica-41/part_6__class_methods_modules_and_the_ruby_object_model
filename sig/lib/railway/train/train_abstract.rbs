@@ -4,22 +4,22 @@ module Railway
       attr_reader type: ::Symbol
       attr_accessor number: ::String
       attr_accessor speed: ::Float
-      attr_accessor wagons: ::Array[::Railway::Wagon::WagonAbstract]
-      attr_accessor route: ::Railway::Route
-      attr_accessor current_station: ::Hash[::Symbol, ::Integer | ::Railway::Station]
+      attr_accessor wagons: ::Array[Railway::Wagon::WagonAbstract]
+      attr_accessor route: Railway::Route
+      attr_accessor current_station: ::Hash[::Symbol, ::Integer | Railway::Station]
 
       def initialize: (::String _number) -> void
 
       def stop: () -> void
       def stopped?: () -> bool
-      def attach_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
-      def unhook_wagon: (::Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
-      def route_status: () -> ::Hash[::Symbol, ::Railway::Station]
+      def attach_wagon: (Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
+      def unhook_wagon: (Railway::Wagon::WagonAbstract wagon) -> TrainAbstract
+      def route_status: () -> ::Hash[::Symbol, Railway::Station]
 
       private
 
-      def wagon?: (::Railway::Wagon::WagonAbstract wagon) -> bool
-      def wagon_type_suitable?: (::Railway::Wagon::WagonAbstract wagon) -> bool
+      def wagon?: (Railway::Wagon::WagonAbstract wagon) -> bool
+      def wagon_type_suitable?: (Railway::Wagon::WagonAbstract wagon) -> bool
     end
   end
 end

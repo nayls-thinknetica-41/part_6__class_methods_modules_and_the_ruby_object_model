@@ -1,16 +1,16 @@
 module Railway
   class Station
     attr_accessor name: ::String
-    attr_reader trains: ::Array[::Railway::Train::TrainAbstract]
+    attr_reader trains: ::Array[Railway::Train::TrainAbstract]
 
     def initialize: (::String name) -> void
 
-    def trains_on_type: (::Symbol train_type) -> ::Hash[::Symbol, ::Array[::Railway::Train::TrainAbstract]]
-    def arrivale: (::Railway::Train::TrainAbstract train) -> ::Railway::Station
-    def departure: (::Railway::Train::TrainAbstract train) -> ::Railway::Station
+    def trains_on_type: (::Symbol train_type) -> ::Hash[::Symbol, ::Array[Railway::Train::TrainAbstract]]
+    def arrivale: (Railway::Train::TrainAbstract train) -> Railway::Station
+    def departure: (Railway::Train::TrainAbstract train) -> Railway::Station
 
     private
 
-    def train?: (::Railway::Train::TrainAbstract train) -> bool
+    def train?: (Railway::Train::TrainAbstract train) -> bool
   end
 end

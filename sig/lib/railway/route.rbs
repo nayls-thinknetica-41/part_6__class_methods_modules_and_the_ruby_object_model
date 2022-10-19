@@ -1,17 +1,17 @@
 module Railway
   class Route
-    # attr_reader routes: ::Array[::Railway::Station]
+    # attr_reader routes: ::Array[Railway::Station]
 
-    def initialize: (::Railway::Station start_station, ::Railway::Station end_station) -> void
+    def initialize: (Railway::Station start_station, Railway::Station end_station) -> void
 
-    def insert: (::Railway::Station station) -> ::Railway::Route
-    def delete: (::Railway::Station station) -> ::Railway::Route
+    def insert: (Railway::Station station) -> Railway::Route
+    def delete: (Railway::Station station) -> Railway::Route
 
-    def routes: () -> ::Array[::Railway::Station]
-    def exist_in_routes?: (::Railway::Station station) -> bool
+    def routes: () -> ::Array[Railway::Station]
+    def exist_in_routes?: (Railway::Station station) -> bool
 
     private
 
-    def station?: (::Railway::Station station) -> bool
+    def station?: (Railway::Station station) -> bool
   end
 end

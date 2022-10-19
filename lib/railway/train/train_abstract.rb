@@ -7,9 +7,9 @@ module Railway
     # @attr_reader type   [::Symbol]
     # @attr        number [::String]
     # @attr        speed  [::Float]
-    # @attr        wagons [::Array[::Railway::Wagon::WagonAbstract]]
-    # @attr        route  [::Railway::Route]
-    # @attr        current_station [::Hash[::Symbol, ::Integer | ::Railway::Station]]
+    # @attr        wagons [::Array[Railway::Wagon::WagonAbstract]]
+    # @attr        route  [Railway::Route]
+    # @attr        current_station [::Hash[::Symbol, ::Integer | Railway::Station]]
     class TrainAbstract
       attr_reader :type
       attr_accessor :number,
@@ -49,8 +49,8 @@ module Railway
       end
 
       ##
-      # @param wagon [::Railway::Wagon::WagonAbstract]
-      # @return [::Railway::Train::TrainAbstract]
+      # @param wagon [Railway::Wagon::WagonAbstract]
+      # @return [Railway::Train::TrainAbstract]
       def attach_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
@@ -62,8 +62,8 @@ module Railway
       end
 
       ##
-      # @param wagon [::Railway::Wagon::WagonAbstract]
-      # @return [::Railway::Train::TrainAbstract]
+      # @param wagon [Railway::Wagon::WagonAbstract]
+      # @return [Railway::Train::TrainAbstract]
       def unhook_wagon(wagon)
         raise TypeError unless wagon?(wagon)
         raise TypeError unless wagon_type_suitable?(wagon)
@@ -75,10 +75,10 @@ module Railway
       end
 
       ##
-      # @param route [::Railway::Route]
-      # @return [::Railway::Route]
+      # @param route [Railway::Route]
+      # @return [Railway::Route]
       def route=(route)
-        raise TypeError unless route.is_a?(::Railway::Route)
+        raise TypeError unless route.is_a?(Railway::Route)
 
         @current_station = {
           index: 0,
@@ -89,7 +89,7 @@ module Railway
       end
 
       ##
-      # @return [::Hash[::Symbol, ::Railway::Station]]
+      # @return [::Hash[::Symbol, Railway::Station]]
       def route_status
         return if @route.nil? || @route.routes.empty?
 
@@ -118,7 +118,7 @@ module Railway
       end
 
       ##
-      # @return [::Railway::Train::TrainAbstract]
+      # @return [Railway::Train::TrainAbstract]
       def forward
         next_station_index = @current_station[:index] + 1
         next_station = @route.routes[next_station_index]
@@ -134,7 +134,7 @@ module Railway
       end
 
       ##
-      # @return [::Railway::Train::TrainAbstract]
+      # @return [Railway::Train::TrainAbstract]
       def backward
         previous_station_index = @current_station[:index] - 1
         previous_station = @route.routes[previous_station_index]
@@ -153,15 +153,15 @@ module Railway
 
       ##
       # @private
-      # @param wagon [::Railway::Wagon::WagonAbstract]
+      # @param wagon [Railway::Wagon::WagonAbstract]
       # @return bool
       def wagon?(wagon)
-        wagon.is_a?(::Railway::Wagon::WagonAbstract)
+        wagon.is_a?(Railway::Wagon::WagonAbstract)
       end
 
       ##
       # @private
-      # @param _wagon [::Railway::Wagon::WagonAbstract]
+      # @param _wagon [Railway::Wagon::WagonAbstract]
       # @return bool
       def wagon_type_suitable?(_wagon)
         raise 'Not implement method'
