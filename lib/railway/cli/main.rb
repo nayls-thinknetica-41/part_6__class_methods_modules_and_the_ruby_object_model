@@ -1,19 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'seed'
-
 module Railway
   ##
   # Railway::Cli
   module Cli
-    def self.state
-      @state || Cli.seed
-    end
-
-    def self.state=(state)
-      @state = state
-    end
-
     ##
     # Railway::Cli::Main
     module Main

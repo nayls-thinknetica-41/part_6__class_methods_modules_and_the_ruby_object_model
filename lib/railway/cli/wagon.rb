@@ -35,17 +35,25 @@ module Railway
           when 'p', 'previous'
             Cli::Main.help
           when 'c', 'create'
-            printf '(wagon) >> Введите название станции: '
-            wagon_name = gets.chomp
-            save_wagons(::Railway::Station.new(wagon_name))
+            puts '(wagon) >> [0] cargo, [1] passenger'
+            printf '(wagon) >> Выберите тип вагона: '
+            wagon_type = gets.chomp.to_i
+            case wagon_type
+            when 0
+              create_wagons(::Railway::Wagon::WagonCargo.new)
+            when 1
+              create_wagons(::Railway::Wagon::WagonPassenger.new)
+            else
+              '(wagon) >> Введен неверный тип'
+            end
             help_and_control
           when 'g', 'get'
-            printf '(wagon) >> Введите ID станции: '
+            printf '(wagon) >> Введите ID вагона: '
             wagon_id = gets.chomp.to_i
             get_wagon(wagon_id)
             help_and_control
           when 'd', 'delete'
-            printf '(wagon) >> Введите ID станции: '
+            printf '(wagon) >> Введите ID вагона: '
             wagon_id = gets.chomp.to_i
             delete_wagons(wagon_id)
             help_and_control
@@ -57,44 +65,64 @@ module Railway
           end
         end
 
-        def get_wagon(wagon_id)
-          wagon = Cli.state[:wagons][wagon_id]
+        def get_wagon(wagon_id, format: :terminal)
+          wagon = Cli::State.wagons[wagon_id]
 
-          puts "[#{wagon_id}] #{wagon.type}"
-          puts
+          if wagon.nil?
+            puts '(wagon) >> Вагон не найден'
+            return nil
+          end
+
+          if format == :terminal
+            puts "[#{wagon_id}] #{wagon.type}"
+            puts ''
+          end
+
+          wagon
         end
 
-        def list_wagons
-          Cli.state[:wagons].each_with_index do |st, idx|
-            puts "[#{idx}] #{st.type}"
+        def list_wagons(format: :terminal)
+          wagons = Cli::State.wagons
+
+          if wagons.nil?
+            puts '(wagon) >> Нет вагонов'
+            return nil
           end
-          puts
+
+          if format == :terminal
+            wagons.each_with_index do |wagon, idx|
+              puts "[#{idx}] #{wagon.type}"
+            end
+            puts ''
+          end
+
+          wagons
         end
 
-        def save_wagons(wagon)
-          if Cli.state.key?(:wagons)
-            Cli.state[:wagons].push(wagon)
-          else
-            Cli.state = { wagons: [wagon] }
-          end
+        def create_wagons(wagon)
+          Cli::State.wagons(wagon)
         end
 
         def delete_wagons(wagon_id)
-          unless Cli.state.key?(:wagons)
-            puts '(wagon) >> Нет станций'
+          unless Cli::State.key?(:wagons)
+            puts '(wagon) >> Нет вагонов'
             return
           end
 
-          wagon = Cli.state[:wagons][wagon_id]
+          wagon = Cli::State.wagons[wagon_id]
           if wagon.nil?
-            puts '(wagon) >> Cтанция не найдена'
+            puts '(wagon) >> Вагон не найден'
           else
-            Cli.state[:wagons].delete_at(wagon_id)
+            Cli::State.wagons.delete_at(wagon_id)
           end
         end
 
         def help_and_control
           help
+          output_and_control
+        end
+
+        def output_and_control
           printf '(wagon) >> '
           control(gets.chomp)
         end

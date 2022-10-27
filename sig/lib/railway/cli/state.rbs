@@ -1,0 +1,30 @@
+module Railway
+  module Cli
+    module State
+      # def self.state: () -> Hash[Symbol, Array[Railway::Station | Railway::Route | Railway::Wagon::WagonAbstract | Railway::Train::TrainAbstract]]
+      # def self.state=: (Hash[Symbol, Array[Railway::Station | Railway::Route | Railway::Wagon::WagonAbstract | Railway::Train::TrainAbstract]] state) -> Hash[Symbol, Array[Railway::Station | Railway::Route | Railway::Wagon::WagonAbstract | Railway::Train::TrainAbstract]]
+
+      def self.key?: (Symbol) -> bool
+
+      def self.stations: (?Railway::Station station) -> Array[Railway::Station]
+      def self.stations=: (Array[Railway::Station] stations) -> Array[Railway::Station]
+      def self.station?: (Railway::Station station) -> bool
+
+      def self.routes: () -> Array[Railway::Route]
+      def self.routes=: (Railway::Route route) -> Array[Railway::Route]
+      def self.route?: (Railway::Route route) -> bool
+
+      def self.wagons: () -> Array[Railway::Wagon::WagonAbstract]
+      def self.wagons=: (Railway::Wagon::WagonAbstract wagon) -> Array[Railway::Station]
+      def self.wagon?: (Railway::Wagon::WagonAbstract wagon) -> bool
+
+      def self.trains: () -> Array[Railway::Train::TrainAbstract]
+      def self.trains=: (Railway::Train::TrainAbstract train) -> Array[Railway::Station]
+      def self.train?: (Railway::Train::TrainAbstract train) -> bool
+
+      private
+
+      def self.seed: () -> Hash[Symbol, Array[untyped]]
+    end
+  end
+end

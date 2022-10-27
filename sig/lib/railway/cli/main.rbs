@@ -1,13 +1,5 @@
 module Railway
-  #
-  # Railway::Cli
   module Cli
-    def self.state: () -> Hash[Symbol, untyped]
-
-    def self.state=: (Hash[Symbol, untyped] state) -> Hash[Symbol, untyped]
-
-    #
-    # Railway::Cli::Main
     module Main
       HELP: ::String
 
