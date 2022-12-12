@@ -45,6 +45,8 @@ module Railway
       raise ArgumentError unless station?(station)
 
       return self unless exist_in_routes?(station)
+      return self if routes.first.equal?(station) or routes.last.equal?(station)
+      return self if routes.count <= 2
 
       @routes.delete(station)
 

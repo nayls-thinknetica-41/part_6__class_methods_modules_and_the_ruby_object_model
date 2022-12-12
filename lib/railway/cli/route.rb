@@ -140,7 +140,7 @@ module Railway
           if route.nil?
             puts '(route) >> Маршрут не найден'
           else
-            Cli::State.routes[route_id].delete(Cli::State.routes[route_id].routes[station_id])
+            Cli::State.routes[route_id].delete(Cli::Station.get_station(station_id, format: :object))
           end
         end
 

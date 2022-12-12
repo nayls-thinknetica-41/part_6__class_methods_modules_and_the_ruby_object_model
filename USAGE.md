@@ -13,13 +13,13 @@ bundle install --full-index --local
 ## Common Commands
 
 ```bash
-bin/bundle install --binstubs
-bin/bundle exec guard
+bundle install --binstubs
+bundle exec guard
 ```
 
 ```bash
-bin/guard
+guard
 
-bin/rspec --color --require spec_helper --format Fuubar
-bin/rubocop --enable-pending-cops --format fuubar
+rspec --color --require spec_helper --format Fuubar
+rubocop --enable-pending-cops --format fuubar
 ```

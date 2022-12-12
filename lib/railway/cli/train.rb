@@ -20,6 +20,8 @@ module Railway
              "\n" \
              "Commands:\n" \
              "    [l]ist\n" \
+             "    forward\n" \
+             "    backward\n" \
              "\n"
 
       class << self
@@ -67,6 +69,24 @@ module Railway
             output_and_control
           when 'l', 'list'
             list_trains
+            output_and_control
+          when 'forward'
+            printf '(train) >> Введите ID поезда: '
+            train = get_train(gets.chomp.to_i)
+            previous_station_id = train.current_station[:index]
+            train.forward
+            current_station_id = train.current_station[:index]
+            Cli::Station.get_station(previous_station_id).departure(train)
+            Cli::Station.get_station(current_station_id).arrivale(train)
+            output_and_control
+          when 'backward'
+            printf '(train) >> Введите ID поезда: '
+            train = get_train(gets.chomp.to_i)
+            previous_station_id = train.current_station[:index]
+            train.backward
+            current_station_id = train.current_station[:index]
+            Cli::Station.get_station(previous_station_id).departure(train)
+            Cli::Station.get_station(current_station_id).arrivale(train)
             output_and_control
           else
             help_and_control

@@ -46,20 +46,20 @@ module Railway
             else
               '(wagon) >> Введен неверный тип'
             end
-            help_and_control
+            output_and_control
           when 'g', 'get'
             printf '(wagon) >> Введите ID вагона: '
             wagon_id = gets.chomp.to_i
             get_wagon(wagon_id)
-            help_and_control
+            output_and_control
           when 'd', 'delete'
             printf '(wagon) >> Введите ID вагона: '
             wagon_id = gets.chomp.to_i
             delete_wagons(wagon_id)
-            help_and_control
+            output_and_control
           when 'l', 'list'
             list_wagons
-            help_and_control
+            output_and_control
           else
             help_and_control
           end

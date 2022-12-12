@@ -146,6 +146,7 @@ module Railway
           index: previous_station_index,
           station: previous_station
         }
+
         self
       end
 
