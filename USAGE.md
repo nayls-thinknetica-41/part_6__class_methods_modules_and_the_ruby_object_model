@@ -4,8 +4,8 @@
 rvm install ruby-3.1.2
 rvm use ruby-3.1.2
 
-rvm gemset create part_5__interfaces_inheritance_and_polymorphism
-rvm gemset use part_5__interfaces_inheritance_and_polymorphism
+rvm gemset create part_6__class_methods_modules_and_the_ruby_object_model
+rvm gemset use part_6__class_methods_modules_and_the_ruby_object_model
 
 bundle install --full-index --local
 ```
