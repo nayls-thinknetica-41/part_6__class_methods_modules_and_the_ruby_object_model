@@ -19,6 +19,14 @@ module Railway
       @trains = []
     end
 
+    def self.all
+      ObjectSpace.each_object(self).to_a
+    end
+
+    def self.count
+      all.count
+    end
+
     def trains
       @trains.dup
     end
