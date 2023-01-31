@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Railway::Cli::State
+  
+    &mdash; Documentation by YARD 0.9.28
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Railway::Cli::State";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Cli.html" title="Railway::Cli (module)">Cli</a></span></span>
+     &raquo; 
+    <span class="title">State</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Railway::Cli::State
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/railway/cli/state.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Railway::Cli::State</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#key%3F-class_method" title="key? (class method)">.<strong>key?</strong>(key)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#route%3F-class_method" title="route? (class method)">.<strong>route?</strong>(route)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#routes-class_method" title="routes (class method)">.<strong>routes</strong>(route = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#seed-class_method" title="seed (class method)">.<strong>seed</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#state-class_method" title="state (class method)">.<strong>state</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#state=-class_method" title="state= (class method)">.<strong>state=</strong>(state)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#station%3F-class_method" title="station? (class method)">.<strong>station?</strong>(station)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stations-class_method" title="stations (class method)">.<strong>stations</strong>(station = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#train%3F-class_method" title="train? (class method)">.<strong>train?</strong>(train)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#trains-class_method" title="trains (class method)">.<strong>trains</strong>(train = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wagon%3F-class_method" title="wagon? (class method)">.<strong>wagon?</strong>(wagon)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wagons-class_method" title="wagons (class method)">.<strong>wagons</strong>(wagon = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="key?-class_method">
+  
+    .<strong>key?</strong>(key)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="route?-class_method">
+  
+    .<strong>route?</strong>(route)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_route?'>route?</span><span class='lparen'>(</span><span class='id identifier rubyid_route'>route</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_routes'>routes</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='id identifier rubyid_route'>route</span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="routes-class_method">
+  
+    .<strong>routes</strong>(route = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_routes'>routes</span><span class='lparen'>(</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_route'>route</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:routes</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:routes</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:routes</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_route'>route</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:routes</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_route'>route</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:routes</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seed-class_method">
+  
+    .<strong>seed</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_seed'>seed</span>
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Station.html" title="Railway::Station (class)">Station</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Station.html#initialize-instance_method" title="Railway::Station#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Station_0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Station.html" title="Railway::Station (class)">Station</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Station.html#initialize-instance_method" title="Railway::Station#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Station_1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Station.html" title="Railway::Station (class)">Station</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Station.html#initialize-instance_method" title="Railway::Station#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Station_2</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Station.html" title="Railway::Station (class)">Station</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Station.html#initialize-instance_method" title="Railway::Station#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Station_3</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Station.html" title="Railway::Station (class)">Station</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Station.html#initialize-instance_method" title="Railway::Station#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Station_4</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_seed_routes'>seed_routes</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Route.html" title="Railway::Route (class)">Route</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Route.html#initialize-instance_method" title="Railway::Route#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Route.html" title="Railway::Route (class)">Route</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Route.html#initialize-instance_method" title="Railway::Route#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Route.html" title="Railway::Route (class)">Route</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Route.html#initialize-instance_method" title="Railway::Route#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_insert'><span class='object_link'><a href="../Route.html#insert-instance_method" title="Railway::Route#insert (method)">insert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Route.html" title="Railway::Route (class)">Route</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Route.html#initialize-instance_method" title="Railway::Route#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_seed_wagons'>seed_wagons</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonCargo.html" title="Railway::Wagon::WagonCargo (class)">WagonCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonCargo.html#initialize-instance_method" title="Railway::Wagon::WagonCargo#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonCargo.html" title="Railway::Wagon::WagonCargo (class)">WagonCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonCargo.html#initialize-instance_method" title="Railway::Wagon::WagonCargo#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonCargo.html" title="Railway::Wagon::WagonCargo (class)">WagonCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonCargo.html#initialize-instance_method" title="Railway::Wagon::WagonCargo#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonCargo.html" title="Railway::Wagon::WagonCargo (class)">WagonCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonCargo.html#initialize-instance_method" title="Railway::Wagon::WagonCargo#initialize (method)">new</a></span></span><span class='comma'>,</span>
+
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonPassenger.html" title="Railway::Wagon::WagonPassenger (class)">WagonPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonPassenger.html#initialize-instance_method" title="Railway::Wagon::WagonPassenger#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonPassenger.html" title="Railway::Wagon::WagonPassenger (class)">WagonPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonPassenger.html#initialize-instance_method" title="Railway::Wagon::WagonPassenger#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonPassenger.html" title="Railway::Wagon::WagonPassenger (class)">WagonPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonPassenger.html#initialize-instance_method" title="Railway::Wagon::WagonPassenger#initialize (method)">new</a></span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon.html" title="Railway::Wagon (module)">Wagon</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Wagon/WagonPassenger.html" title="Railway::Wagon::WagonPassenger (class)">WagonPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Wagon/WagonPassenger.html#initialize-instance_method" title="Railway::Wagon::WagonPassenger#initialize (method)">new</a></span></span>
+  <span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_seed_trains'>seed_trains</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainCargo.html" title="Railway::Train::TrainCargo (class)">TrainCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainCargo.html#initialize-instance_method" title="Railway::Train::TrainCargo#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Cargo_100</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainCargo.html" title="Railway::Train::TrainCargo (class)">TrainCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainCargo.html#initialize-instance_method" title="Railway::Train::TrainCargo#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Cargo_101</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainCargo.html" title="Railway::Train::TrainCargo (class)">TrainCargo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainCargo.html#initialize-instance_method" title="Railway::Train::TrainCargo#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Cargo_102</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainPassenger.html" title="Railway::Train::TrainPassenger (class)">TrainPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainPassenger.html#initialize-instance_method" title="Railway::Train::TrainPassenger#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Passenger_103</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainPassenger.html" title="Railway::Train::TrainPassenger (class)">TrainPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainPassenger.html#initialize-instance_method" title="Railway::Train::TrainPassenger#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Passenger_104</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Railway.html" title="Railway (module)">Railway</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train.html" title="Railway::Train (module)">Train</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Train/TrainPassenger.html" title="Railway::Train::TrainPassenger (class)">TrainPassenger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Train/TrainPassenger.html#initialize-instance_method" title="Railway::Train::TrainPassenger#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Passenger_105</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_attach_wagon'><span class='object_link'><a href="../Train/TrainAbstract.html#attach_wagon-instance_method" title="Railway::Train::TrainAbstract#attach_wagon (method)">attach_wagon</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_route'>route</span> <span class='op'>=</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_t'>t</span>
+    <span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_arrivale'>arrivale</span><span class='lparen'>(</span><span class='id identifier rubyid_seed_trains'>seed_trains</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='ivar'>@state</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>stations:</span> <span class='id identifier rubyid_seed_stations'>seed_stations</span><span class='comma'>,</span>
+    <span class='label'>routes:</span> <span class='id identifier rubyid_seed_routes'>seed_routes</span><span class='comma'>,</span>
+    <span class='label'>wagons:</span> <span class='id identifier rubyid_seed_wagons'>seed_wagons</span><span class='comma'>,</span>
+    <span class='label'>trains:</span> <span class='id identifier rubyid_seed_trains'>seed_trains</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="state-class_method">
+  
+    .<strong>state</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_state'>state</span>
+  <span class='ivar'>@state</span> <span class='op'>||</span> <span class='id identifier rubyid_seed'>seed</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="state=-class_method">
+  
+    .<strong>state=</strong>(state)  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_state='>state=</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
+  <span class='ivar'>@state</span> <span class='op'>=</span> <span class='id identifier rubyid_state'>state</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="station?-class_method">
+  
+    .<strong>station?</strong>(station)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_station?'>station?</span><span class='lparen'>(</span><span class='id identifier rubyid_station'>station</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_stations'>stations</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='id identifier rubyid_station'>station</span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stations-class_method">
+  
+    .<strong>stations</strong>(station = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stations'>stations</span><span class='lparen'>(</span><span class='id identifier rubyid_station'>station</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_station'>station</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:stations</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:stations</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:stations</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_station'>station</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:stations</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_station'>station</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:stations</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="train?-class_method">
+  
+    .<strong>train?</strong>(train)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_train?'>train?</span><span class='lparen'>(</span><span class='id identifier rubyid_train'>train</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_trains'>trains</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='id identifier rubyid_train'>train</span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="trains-class_method">
+  
+    .<strong>trains</strong>(train = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_trains'>trains</span><span class='lparen'>(</span><span class='id identifier rubyid_train'>train</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_train'>train</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:trains</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:trains</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:trains</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_train'>train</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:trains</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_train'>train</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:trains</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wagon?-class_method">
+  
+    .<strong>wagon?</strong>(wagon)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wagon?'>wagon?</span><span class='lparen'>(</span><span class='id identifier rubyid_wagon'>wagon</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_wagons'>wagons</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span><span class='id identifier rubyid_wagon'>wagon</span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>else</span>
+    <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wagons-class_method">
+  
+    .<strong>wagons</strong>(wagon = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/railway/cli/state.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wagons'>wagons</span><span class='lparen'>(</span><span class='id identifier rubyid_wagon'>wagon</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_wagon'>wagon</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:wagons</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:wagons</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:wagons</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_wagon'>wagon</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:wagons</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_wagon'>wagon</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_state'>state</span><span class='lbracket'>[</span><span class='symbol'>:wagons</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Jan 31 22:57:03 2023 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.28 (ruby-3.1.0).
+</div>
+
+    </div>
+  </body>
+</html>
