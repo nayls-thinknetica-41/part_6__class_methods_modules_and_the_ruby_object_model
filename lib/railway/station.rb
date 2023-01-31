@@ -32,6 +32,18 @@ module Railway
     end
 
     ##
+    # @return [::Array[Railway::Station]]
+    def self.all
+      ObjectSpace.each_object(self).to_a
+    end
+
+    ##
+    # @return [::Integer]
+    def self.count
+      all.count
+    end
+
+    ##
     # @param train_type [::Symbol]
     # @return [::Hash[::Symbol, Array[Railway::Train::TrainAbstract]]]
     def trains_on_type(train_type)

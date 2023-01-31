@@ -5,6 +5,9 @@ module Railway
 
     def initialize: (::String name) -> void
 
+    def self.all: () -> ::Array[Railway::Station]
+    def self.count: () -> ::Integer
+
     def trains_on_type: (::Symbol train_type) -> ::Hash[::Symbol, ::Array[Railway::Train::TrainAbstract]]
     def arrivale: (Railway::Train::TrainAbstract train) -> Railway::Station
     def departure: (Railway::Train::TrainAbstract train) -> Railway::Station
