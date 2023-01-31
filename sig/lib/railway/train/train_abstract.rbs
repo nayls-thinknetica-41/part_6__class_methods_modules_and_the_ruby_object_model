@@ -10,6 +10,7 @@ module Railway
 
       def initialize: (::String _number) -> void
 
+      def find: () -> (Railway::Train::TrainAbstract | nil)
       def stop: () -> void
       def stopped?: () -> bool
       def attach_wagon: (Railway::Wagon::WagonAbstract wagon) -> TrainAbstract

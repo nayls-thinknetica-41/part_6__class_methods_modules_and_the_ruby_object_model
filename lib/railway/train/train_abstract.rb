@@ -34,6 +34,18 @@ module Railway
         @current_station = {}
       end
 
+      # @param number [::String]
+      # @return [Railway::Train::TrainAbstract | nil]
+      def self.find(number)
+        ObjectSpace.each_object(self) do |obj|
+          if obj.number.eql?(number)
+            return obj.number
+          end
+        end
+
+        return nil
+      end
+
       ##
       # @return void
       def stop
